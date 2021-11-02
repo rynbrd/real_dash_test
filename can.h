@@ -10,7 +10,7 @@ class CanReceiver : public Receiver {
         ~CanReceiver();
 
         // Initialize the CAN controller. 
-        bool begin(uint8_t cs_pin = 17, uint8_t baudrate = CAN_500KBPS, uint8_t clockset = MCP_16MHz);
+        bool begin(uint8_t cs_pin = 17, uint8_t baudrate = CAN_500KBPS, uint8_t clockset = MCP_16MHZ);
 
         // Read a frame from the CAN bus. Return true if a frame was read.
         bool read(uint32_t* id, uint8_t* len, byte* data) override;

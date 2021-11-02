@@ -1,13 +1,13 @@
 #include <Arduino.h>
 #include "can.h"
 #include "debug.h"
-#include "mcp_can.h"
+#include "mcp_can_dfs.h"
 #include "realdash.h"
 #include "serial.h"
 
 #define CAN_CS_PIN 17
 #define CAN_BAUDRATE CAN_250KBPS
-#define CAN_CLOCK MCP_16MHz
+#define CAN_CLOCK MCP_16MHZ
 
 RealDashReceiver rd;
 SerialReceiver sr;
