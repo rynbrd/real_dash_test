@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x5000" signed="false">
+      <value name="Ignition" targetId="167" offset="0" length="1"></value>
+    </frame>
+  </frames>
+</RealDashCAN>
