@@ -6,7 +6,7 @@
 
 class CanReceiver : public Receiver {
     public:
-        CanReceiver() : mcp_(nullptr) {}
+        CanReceiver() : mcp_(nullptr), retries_(5) {}
         ~CanReceiver();
 
         // Initialize the CAN controller. 
@@ -19,6 +19,7 @@ class CanReceiver : public Receiver {
         bool write(uint32_t id, uint8_t len, byte* data) override;
     private:
         MCP_CAN* mcp_;
+        uint8_t retries_;
 };
 
 #endif  // __R51_CAN__

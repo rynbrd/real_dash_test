@@ -43,7 +43,13 @@ bool CanReceiver::write(uint32_t id, uint8_t len, byte* data) {
     if (mcp_ == nullptr) {
         return false;
     }
-    uint8_t err = mcp_->sendMsgBuf(id, false, len, data);
+    uint8_t err;
+    uint8_t attempts = 0;
+    do {
+        err = mcp_->sendMsgBuf(id, 0, len, data);
+        attempts++;
+    } while (err != CAN_OK && attempts <= retries_);
+
     if (err != CAN_OK) {
         ERROR_MSG_VAL("can: write failed: error code ", err);
         return false;
